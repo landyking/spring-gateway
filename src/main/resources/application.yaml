@@ -12,7 +12,7 @@ spring:
 
       routes:
       # =====================================
-      - id: default_path_to_httpbin
+      - id: test
         uri: http://192.168.30.111:8080
         order: 10000
         predicates:
@@ -20,9 +20,9 @@ spring:
 
 logging:
   level:
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
+#    org.springframework.cloud.gateway: TRACE
+#    org.springframework.http.server.reactive: DEBUG
     org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
+#    reactor.ipc.netty: DEBUG
 
 management.endpoints.web.exposure.include: '*'
