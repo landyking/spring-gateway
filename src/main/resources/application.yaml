@@ -4,19 +4,6 @@ server:
 spring:
   jmx:
     enabled: false
-  cloud:
-    gateway:
-#      default-filters:
-#      - PrefixPath=/httpbin
-#      - AddResponseHeader=X-Response-Default-Foo, Default-Bar
-
-      routes:
-      # =====================================
-      - id: test
-        uri: http://192.168.30.111:8080
-        order: 10000
-        predicates:
-        - Path=/**
 
 logging:
   level:

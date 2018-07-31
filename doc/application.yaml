@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  jmx:
+    enabled: false
+  cloud:
+    gateway:
+      routes:
+      # =====================================
+      - id: test
+        uri: http://127.0.0.1:8181
+        order: 10000
+        predicates:
+        - Path=/app1/**
+        filters:
+#        - RewritePath=/app1/(?<segment>.*), /$\{segment}
+        - RewritePath=/(?<segment>.*), /$\{segment}
+
+
+
+management.endpoints.web.exposure.include: '*'
